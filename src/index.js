@@ -35,10 +35,10 @@ function createMarkupCountryList(array) {
       <p class="name">${name.official}</p>`;
     })
     .join('');
-  // countryList.innerHTML = mark;
+   countryList.innerHTML = mark;
 
   // countryList.insertAdjacentHTML('beforeend', mark);
-  countryList.innerHTML = mark;
+
 }
 
 function createMarkupCountryCard(arr) {
@@ -55,9 +55,9 @@ function createMarkupCountryCard(arr) {
         )}</p>`;
     })
     .join('');
-  // countryInfo.innerHTML = markup;
+   countryInfo.innerHTML = markup;
   // countryInfo.insertAdjacentHTML('beforeend', markup);
-  countryInfo.innerHTML = markup;
+  
 }
 
 
