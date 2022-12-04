@@ -27,7 +27,6 @@ function onInput(e) {
   });
 }
 
-
 function createMarkupCountryList(array) {
   const mark = array
     .map(({ flags, name }) => {
@@ -35,10 +34,8 @@ function createMarkupCountryList(array) {
       <p class="name">${name.official}</p>`;
     })
     .join('');
-   countryList.innerHTML = mark;
-
+  countryList.innerHTML = mark;
   // countryList.insertAdjacentHTML('beforeend', mark);
-
 }
 
 function createMarkupCountryCard(arr) {
@@ -55,30 +52,6 @@ function createMarkupCountryCard(arr) {
         )}</p>`;
     })
     .join('');
-   countryInfo.innerHTML = markup;
+  countryInfo.innerHTML = markup;
   // countryInfo.insertAdjacentHTML('beforeend', markup);
-  
 }
-
-
-
-
-// fetchCountries(searchValue).then(data => {
-//   if (data.length > 1 && data.length <= 10) {
-//     fetchCountries(searchValue).then(data => createMarkupCountryList(data));
-//   }
-// });
-
-// fetchCountries(searchValue).then(data => {
-//   if ((data.length = 1)) {
-//     fetchCountries(searchValue).then(data => createMarkupCountryCard(data));
-//   }
-// });
-
-// fetchCountries(searchValue).then(data => {
-//   if (data.length > 10) {
-//     Notiflix.Notify.info(
-//       'Too many matches found. Please enter a more specific name.'
-//     );
-//   }
-// });
