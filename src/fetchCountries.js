@@ -11,6 +11,5 @@ function fetchCountries(name) {
     return r.json()
 });
 }
-// fetchCountries(inputValue).then(data => console.log(data))
 
-export default { fetchCountries };
+export { fetchCountries };

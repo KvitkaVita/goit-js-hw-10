@@ -27,6 +27,42 @@ function onInput(e) {
   });
 }
 
+
+function createMarkupCountryList(array) {
+  const mark = array
+    .map(({ flags, name }) => {
+      return `<img src="${flags.svg}" alt="${name}" width="80" />
+      <p class="name">${name.official}</p>`;
+    })
+    .join('');
+  // countryList.innerHTML = mark;
+
+  // countryList.insertAdjacentHTML('beforeend', mark);
+  countryList.innerHTML = mark;
+}
+
+function createMarkupCountryCard(arr) {
+  const markup = arr
+    .map(({ name, flags, capital, population, languages }) => {
+      return `<div class ="card">
+        <img src="${flags.svg}" alt="${name}" width="80" />
+        <p class="name">${name.official}</p>
+        </div>
+        <p class="info"><span class="info-add">Capital: </span>${capital}</p>
+        <p class="info"><span class="info-add">Population: </span>${population}</p>
+        <p class="info"><span class="info-add">Languages: </span>${Object.values(
+          languages
+        )}</p>`;
+    })
+    .join('');
+  // countryInfo.innerHTML = markup;
+  // countryInfo.insertAdjacentHTML('beforeend', markup);
+  countryInfo.innerHTML = markup;
+}
+
+
+
+
 // fetchCountries(searchValue).then(data => {
 //   if (data.length > 1 && data.length <= 10) {
 //     fetchCountries(searchValue).then(data => createMarkupCountryList(data));
@@ -46,35 +82,3 @@ function onInput(e) {
 //     );
 //   }
 // });
-
-function createMarkupCountryList(array) {
-  const mark = array
-    .map(({ flags, name }) => {
-      return `<img src="${flags.svg}" alt="${name}" width="80" />
-      <p class="name">${name.official}</p>`;
-    })
-    .join('');
-  // countryList.innerHTML = mark;
-
-  countryList.insertAdjacentHTML('beforeend', mark);
-  countryList.innerHTML = mark;
-}
-
-function createMarkupCountryCard(arr) {
-  const markup = arr
-    .map(({ name, flags, capital, population, languages }) => {
-      return `<div class ="card">
-        <img src="${flags.svg}" alt="${name}" width="80" />
-        <p class="name">${name.official}</p>
-        </div>
-        <p class="info"><span class="info-add">Capital: </span>${capital}</p>
-        <p class="info"><span class="info-add">Population: </span>${population}</p>
-        <p class="info"><span class="info-add">Languages: </span>${Object.values(
-          languages
-        )}</p>`;
-    })
-    .join('');
-  // countryInfo.innerHTML = markup;
-  countryInfo.insertAdjacentHTML('beforeend', markup);
-  countryInfo.innerHTML = markup;
-}
