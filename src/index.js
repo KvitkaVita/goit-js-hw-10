@@ -15,7 +15,7 @@ function onInput(e) {
   const searchValue = e.target.value.trim();
 
   fetchCountries(searchValue).then(data => {
-    if (data.length > 1 && data.length <= 10) {
+    if (data.length >= 2 && data.length <= 10) {
       createMarkupCountryList(data);
     } else if (data.length === 1) {
       createMarkupCountryCard(data);
