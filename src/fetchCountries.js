@@ -8,9 +8,9 @@ function fetchCountries(name) {
        throw new Error(Notiflix.Notify.failure("Oops, there is no country with that name")) 
   
     }
-    return r.json();
+    return r.json()
 });
 }
-fetchCountries().then(data => console.log(data))
+// fetchCountries(inputValue).then(data => console.log(data))
 
 export default { fetchCountries };
